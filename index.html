@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>바이브 코딩 퀴즈</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="blob blob-a"></div>
+  <div class="blob blob-b"></div>
+
+  <main class="card">
+
+    <!-- 화면 1: 시작 화면 -->
+    <section id="start-screen" class="screen">
+      <div class="hero-emoji">🚀</div>
+      <span class="chip">1주차 · 바이브 코딩</span>
+      <h1>바이브 코딩 퀴즈</h1>
+      <p class="sub">HTML·CSS·JS, 프롬프트, Git까지<br>얼마나 기억하는지 확인해 봐요!</p>
+      <ul class="facts">
+        <li><b>10</b><span>문제</span></li>
+        <li><b>4</b><span>지선다</span></li>
+        <li><b>📝</b><span>오답 노트</span></li>
+      </ul>
+      <p id="load-message" class="message">문제를 불러오는 중...</p>
+      <button id="start-btn" class="primary" disabled>시작하기</button>
+    </section>
+
+    <!-- 화면 2: 문제 풀이 화면 -->
+    <section id="quiz-screen" class="screen" hidden>
+      <div class="top-bar">
+        <span id="progress-text" class="pill"></span>
+        <span id="score-text" class="pill pill-score"></span>
+      </div>
+      <div class="progress"><div id="progress-bar"></div></div>
+      <h2 id="question-text"></h2>
+      <div id="choices"></div>
+      <p id="feedback" class="feedback" hidden></p>
+      <button id="next-btn" class="primary" hidden>다음 문제 →</button>
+    </section>
+
+    <!-- 화면 3: 결과 화면 (점수 + 오답 노트) -->
+    <section id="result-screen" class="screen" hidden>
+      <div id="score-ring" class="ring">
+        <div class="ring-inner">
+          <span id="result-score"></span>
+          <small>점</small>
+        </div>
+      </div>
+      <p id="result-comment" class="result-comment"></p>
+      <h3>📝 오답 노트</h3>
+      <div id="wrong-notes"></div>
+      <div class="btn-row">
+        <button id="retry-all-btn" class="primary">처음부터 다시 풀기</button>
+        <button id="retry-wrong-btn" class="secondary">틀린 문제만 다시 풀기</button>
+      </div>
+    </section>
+
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
